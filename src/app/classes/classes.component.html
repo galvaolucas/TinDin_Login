@@ -1,0 +1,83 @@
+<nav class="navbar navbar-light bg-primary">
+    <div class="container-fluid">
+        <h2 style='color: aliceblue'>TinDin FrontEnd Challenge</h2>
+
+        <div class="d-flex">
+            <button (click)="clickAddClasses()" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-success">(+)Nova Aula</button>
+        </div>
+
+
+    </div>
+</nav>
+
+<table class='table mt-3'>
+    <thead>
+        <tr>
+            <th scope='col'>Disciplina</th>
+            <th scope='col'>Título</th>
+            <th scope='col'>Descricão</th>
+            <th scope='col'>Professor</th>
+            <th scope='col'>Data</th>
+            <th scope='col'>Opções</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let row of classesData">
+            <td>{{row.Disciplina}}</td>
+            <td>{{row.Titulo}}</td>
+            <td>{{row.Descricao}}</td>
+            <td>{{row.Professor}}</td>
+            <td>{{row.Data}}</td>
+            <td>
+                <button (click)="onEdit(row)" style="color: aliceblue" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class='btn btn-info'>Editar</button>
+                <button (click)="deleteClasses(row)" class='btn btn-danger mx-3'>Excluir</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- Modal -->
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Nova Aula</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+            <form [formGroup]="formValue">
+              
+                <div class="mb-3">
+                  <label for="exampleInput" class="form-label">Disciplina</label>
+                  <input type="text" formControlName="Disciplina" class="form-control" id="exampleInputDisciplina">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInput" class="form-label">Título</label>
+                  <input type="text" formControlName="Titulo" class="form-control" id="exampleInputTitulo">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInput" class="form-label">Descricão</label>
+                    <input type="text" formControlName="Descricao" class="form-control" id="exampleInputDescricao">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInput" class="form-label">Professor</label>
+                    <input type="text" formControlName="Professor" class="form-control" id="exampleInputProfessor">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInput" class="form-label">Data</label>
+                    <input type="text" formControlName="Data" class="form-control" id="exampleInputData">
+                </div>
+                
+              </form>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button"  id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+          <button type="button" *ngIf="showAdd" (click)="postClassesDetails()" class="btn btn-primary">Adicionar Aula</button>
+          <button type="button" *ngIf="showEditar" (click)="updateClassesDetails()" class="btn btn-primary">Editar</button>
+        </div>
+      </div>
+    </div>
+  </div>

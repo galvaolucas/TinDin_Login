@@ -1,0 +1,51 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "id": 2,
+      "Disciplina": "a",
+      "Titulo": "a",
+      "Descricao": "a",
+      "Professor": "a",
+      "Data": "a"
+    },
+    {
+      "id": 3,
+      "Disciplina": "a",
+      "Titulo": "a",
+      "Descricao": "a",
+      "Professor": "a",
+      "Data": "a"
+    },
+    {
+      "id": 4,
+      "Disciplina": "a",
+      "Titulo": "a",
+      "Descricao": "a",
+      "Professor": "a",
+      "Data": "a"
+    },
+    {
+      "id": 5,
+      "Disciplina": "Matemática",
+      "Titulo": "Cabeça de gato",
+      "Descricao": "Bel",
+      "Professor": "Eu",
+      "Data": "26/07/2021"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
